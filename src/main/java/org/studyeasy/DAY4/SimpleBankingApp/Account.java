@@ -1,5 +1,7 @@
 package org.studyeasy.DAY4.SimpleBankingApp;
 
+import java.util.Scanner;
+
 /***
  Developer Name : Tushar Thakur
  Developer Contact : tusharth111@gmail.com
@@ -27,34 +29,50 @@ public class Account {
         return name;
     }
 
-    public int getPin() {
-        return pin;
-    }
 
     public double getBalance(){
         return balance;
     }
-
-    public void setBalance(double balance){
-        this.balance = balance;
-    }
     public boolean validatePin(int enteredPin){
         return this.pin == enteredPin;
     }
+    public void deposit(double amount){
+        if(amount >0){
+            balance += amount;
+            System.out.println("Deposited : "+ amount);
 
+        }else{
+            System.out.println("Invalid deposit amount");
+        }
+    }
+    public void withdraw(double amount){
+        if(amount > 0 && amount <=balance){
+            balance -= amount;
+            System.out.println("Amount withdrawn is  : "+ amount);
+        }else{
+            System.out.println("Insufficent balance or invalid amount ! ");
+        }
+    }
     public static void main(String[] args) {
         Account acc1 = new Account("101","Tushar",1234);
-
-        System.out.println("AccountNumber: "+ acc1.getAccountNumber());
-        System.out.println("Name: "+ acc1.getName());
-        System.out.println("Balance: "+ acc1.getBalance());
-        acc1.setBalance(10000);
-        System.out.println("Balance: "+ acc1.getBalance());
-
         if(acc1.validatePin(1234)){
             System.out.println("Login is successfull! ");
         }else {
             System.out.println("Wrong pin! ");
         }
+        System.out.println("AccountNumber: "+ acc1.getAccountNumber());
+        System.out.println("Name: "+ acc1.getName());
+        System.out.println("Balance: "+ acc1.getBalance());
+        acc1.deposit(10000.0);
+        System.out.println("Balance: "+ acc1.getBalance());
+        System.out.println("Enter the amount you want to withdraw: ");
+        Scanner sc = new Scanner(System.in);
+        double amountToWithdraw = sc.nextDouble();
+        acc1.withdraw(amountToWithdraw);
+        System.out.println("Balance: "+ acc1.getBalance());
+
+
+
+
     }
 }
