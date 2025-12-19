@@ -29,7 +29,6 @@ public class Account {
         return name;
     }
 
-
     public double getBalance(){
         return balance;
     }
@@ -53,26 +52,5 @@ public class Account {
             System.out.println("Insufficent balance or invalid amount ! ");
         }
     }
-    public static void main(String[] args) {
-        Account acc1 = new Account("101","Tushar",1234);
-        if(acc1.validatePin(1234)){
-            System.out.println("Login is successfull! ");
-        }else {
-            System.out.println("Wrong pin! ");
-        }
-        System.out.println("AccountNumber: "+ acc1.getAccountNumber());
-        System.out.println("Name: "+ acc1.getName());
-        System.out.println("Balance: "+ acc1.getBalance());
-        acc1.deposit(10000.0);
-        System.out.println("Balance: "+ acc1.getBalance());
-        System.out.println("Enter the amount you want to withdraw: ");
-        Scanner sc = new Scanner(System.in);
-        double amountToWithdraw = sc.nextDouble();
-        acc1.withdraw(amountToWithdraw);
-        System.out.println("Balance: "+ acc1.getBalance());
 
-
-
-
-    }
 }
