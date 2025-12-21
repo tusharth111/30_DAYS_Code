@@ -16,10 +16,10 @@ public class PascalTriangle {
     public static void main(String[] args) {
         int n = 4;
         for(int i = 0;i<=n;i++){//rows
-            for(int j = 0;j<=n-i;j++){
+            for(int j = 0;j<=n-i;j++){// printing the spaces
                 System.out.print(" ");
             }
-            for(int j =0;j<=i;j++){
+            for(int j =0;j<=i;j++){//printing the numbers
                 System.out.print( " "+factorial(i)/(factorial(i-j) * factorial(j)));
             }
             System.out.println();
