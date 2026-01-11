@@ -7,7 +7,7 @@ package org.studyeasy.DAY26;
  Project Name : 30Days_Java
  ***/
 public class NumberOfSubarray {
-    static int StriclyIncreasing(int arr[]){
+    static int StriclyIncreasing(int []arr){
         int count = 0;
         int len =1;
         int n = arr.length;
