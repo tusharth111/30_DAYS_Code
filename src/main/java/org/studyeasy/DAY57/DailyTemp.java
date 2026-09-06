@@ -36,12 +36,13 @@ public class DailyTemp {
         int n = temp.length;
         int [] ans = new int[n];
         for(int i = 0;i<n;i++){
-            while(!ss.empty() && temp[i] > temp[ss.peek()])
+            while(!ss.empty() && temp[i] > temp[ss.peek()]) // if stack is not empty and current element is greater than
+                // the top of the stack then pop the stack and store the index in ans array
             {
                 int prev = ss.pop();
                 ans[prev]= i - prev;
             }
-            ss.push(i);//push every element
+            ss.push(i);    //push every element
         }
         return ans;
     }

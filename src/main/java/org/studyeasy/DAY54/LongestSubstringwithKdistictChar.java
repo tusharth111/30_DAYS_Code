@@ -17,7 +17,7 @@ public class LongestSubstringwithKdistictChar {
              char en = s.charAt(right); //get the right or next element
              map.put(en,map.getOrDefault(en,0)+1);// add the char in the map or increase the value or freq
              while(map.size() > k){
-                 char rm = s.charAt(left);//get the left character
+                 char rm = getRm(s, left);//get the left character
                  map.put(rm,map.get(rm)-1);//remove the character from the map or decrese the frequency
                  left++;
                  if(map.get(rm) == 0){
@@ -28,6 +28,11 @@ public class LongestSubstringwithKdistictChar {
         }
     return maxLen;
     }
+
+    private static char getRm(String s, int left) {
+        return s.charAt(left);
+    }
+
     public static void main(String[] args) {
         String s = "eceba";
         int k = 2;

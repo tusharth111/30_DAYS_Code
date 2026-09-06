@@ -27,11 +27,12 @@ public class PermutationStr {
         if(map1.equals(map2)){
             return true;
         }
-        for (int right = n1; right < n2; right++) {
+        for (int right = n1; right < n2; right++) {//length of char1 n1 (window is n1) and length of char2 is n2 meaning the rigth will run till the end of the string s2
 
             char lev = s2.charAt(right - n1); // n1 - n1| 2-2 |3-2|4-2|5-2|
             map2.put(lev,map2.get(lev)-1);
-            if(map2.get(lev) == 0){
+            if(map2.get(lev) == 0)
+            {
                 map2.remove(lev);
             }
             //Add next
@@ -41,7 +42,6 @@ public class PermutationStr {
                 return true;
             }
         }
-
         return false;
     }
     public static void main(String[] args) {
